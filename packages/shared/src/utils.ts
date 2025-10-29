@@ -1,4 +1,4 @@
-import { WorkflowParameter, ConditionExpression } from './types';
+import { WorkflowParameter, ConditionExpression } from './types.js';
 
 export class ParameterResolver {
   static resolve(

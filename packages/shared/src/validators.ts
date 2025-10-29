@@ -1,4 +1,4 @@
-import { WorkflowDefinition, WorkflowNode, NodeType } from './types';
+import { WorkflowDefinition, WorkflowNode, NodeType } from './types.js';
 
 export class WorkflowValidator {
   static validate(workflow: WorkflowDefinition): ValidationResult {

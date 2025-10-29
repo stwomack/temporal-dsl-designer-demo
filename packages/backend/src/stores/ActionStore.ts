@@ -7,7 +7,7 @@ export interface ActionStoreConfig {
   email?: {
     host: string;
     port: number;
-    auth: {
+    auth?: {
       user: string;
       pass: string;
     };
@@ -20,7 +20,18 @@ export class ActionStore {
 
   constructor(private config: ActionStoreConfig) {
     if (config.email) {
-      this.emailTransporter = nodemailer.createTransporter(config.email);
+      // Configure transport without auth for MailHog (when no credentials provided)
+      const transportConfig: any = {
+        host: config.email.host,
+        port: config.email.port,
+      };
+
+      // Only add auth if user and pass are provided
+      if (config.email.auth?.user && config.email.auth?.pass) {
+        transportConfig.auth = config.email.auth;
+      }
+
+      this.emailTransporter = nodemailer.createTransport(transportConfig);
     }
   }
 
