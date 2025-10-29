@@ -4,6 +4,7 @@ build/
 .env
 .env.local
 .DS_Store
+.claude
 
 *.log
 npm-debug.log*

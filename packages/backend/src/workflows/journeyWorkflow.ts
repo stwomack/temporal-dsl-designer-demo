@@ -26,7 +26,7 @@ const { executeAction, getAttributes, logActivity } = proxyActivities<typeof act
     initialInterval: '1s',
     maximumInterval: '10s',
     backoffCoefficient: 2,
-    maximumAttempts: 3,
+    maximumAttempts: 100,
   },
 });
 
@@ -120,7 +120,7 @@ async function executeActionNode(node: ActionNode, context: Record<string, any>)
   const resolvedConfig = resolveParameters(node.config, context);
 
   const retryPolicy = node.retryPolicy || {
-    maxAttempts: 3,
+    maxAttempts: 100,
     initialInterval: 1000,
     backoffCoefficient: 2,
     maximumInterval: 10000,
