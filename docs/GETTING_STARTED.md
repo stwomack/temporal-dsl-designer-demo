@@ -95,6 +95,10 @@ Wait for: "Local: http://localhost:5173"
 4. Add an Action Node:
    - Click "Send Email" in the left sidebar
    - An email action node appears on the canvas
+   - Configure the node:
+     - To: 
+     - Subject: Hello from Journey Platform
+     - Body: Hello from Journey Platform!
 
 5. Connect the Nodes:
    - Click and drag from the bottom dot of the trigger node

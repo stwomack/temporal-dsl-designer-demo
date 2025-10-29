@@ -21,6 +21,7 @@ Journey Platform is a low-code workflow orchestration system that enables users 
 **Key Components**:
 - `WorkflowDesigner`: Main canvas component
 - `CustomNode`: Individual workflow node renderer
+- `NodeConfigPanel`: Node configuration modal
 - `NodePanel`: Sidebar with available node types
 - `Toolbar`: Workflow actions (save, execute, validate)
 - DSL Converter: Transforms UI state to/from DSL
